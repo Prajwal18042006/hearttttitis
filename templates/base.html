@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Heart Disease Guide{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{% block meta_description %}Evidence-based information about heart disease symptoms, causes, diagnosis and treatment.{% endblock %}" />
+  <link rel="canonical" href="{% block canonical %}{{ request.url }}{% endblock %}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="{{ url_for('home') }}" class="logo">
+        <img src="{{ url_for('static', filename='assets/logo.svg') }}" alt="Heart Disease Guide logo" />
+        <span>Heart Disease Guide</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="{{ url_for('home') }}" class="{{ 'active' if active_page == 'home' else '' }}">Home</a></li>
+          <li><a href="{{ url_for('what_is_heart_disease') }}" class="{{ 'active' if active_page == 'what-is-heart-disease' else '' }}">What Is Heart Disease?</a></li>
+          <li><a href="{{ url_for('symptoms_causes') }}" class="{{ 'active' if active_page == 'symptoms-causes' else '' }}">Symptoms &amp; Causes</a></li>
+          <li><a href="{{ url_for('diagnosis_tests') }}" class="{{ 'active' if active_page == 'diagnosis-tests' else '' }}">Diagnosis &amp; Tests</a></li>
+          <li><a href="{{ url_for('treatment_management') }}" class="{{ 'active' if active_page == 'treatment-management' else '' }}">Treatment &amp; Management</a></li>
+          <li><a href="{{ url_for('prevention') }}" class="{{ 'active' if active_page == 'prevention' else '' }}">Prevention</a></li>
+          <li><a href="{{ url_for('when_to_see_doctor') }}" class="{{ 'active' if active_page == 'when-to-see-doctor' else '' }}">When to See a Doctor</a></li>
+          <li><a href="{{ url_for('outlook_prognosis') }}" class="{{ 'active' if active_page == 'outlook-prognosis' else '' }}">Outlook / Prognosis</a></li>
+          <li><a href="{{ url_for('contact') }}" class="btn-nav {{ 'active' if active_page == 'contact' else '' }}">Contact</a></li>
+          {% if logged_in %}
+          <li><span class="nav-user">👤 {{ username }}</span></li>
+          <li><a href="{{ url_for('logout') }}" class="btn-nav">Logout</a></li>
+          {% else %}
+          <li><a href="{{ url_for('login') }}" class="btn-nav">Login</a></li>
+          <li><a href="{{ url_for('register') }}" class="btn-nav">Register</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash-message flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  {% block content %}{% endblock %}
+
+  <footer class="main-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Heart Disease Guide. All rights reserved.</p>
+      <p class="footer-disclaimer">
+        Educational purposes only. Not a substitute for professional medical advice, diagnosis or treatment.
+      </p>
+      <div class="footer-links">
+        <a href="#" aria-disabled="true">Privacy (coming soon)</a>
+        <a href="#" aria-disabled="true">Terms (coming soon)</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+

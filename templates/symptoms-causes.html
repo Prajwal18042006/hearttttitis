@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Symptoms &amp; Causes of Heart Disease | Heart Disease Guide{% endblock %}
+{% block meta_description %}Learn common warning signs of heart disease plus the lifestyle and medical risk factors that cause it.{% endblock %}
+{% block canonical %}{{ url_for('symptoms_causes', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Symptoms &amp; Causes</h1>
+        <p class="page-summary">
+          Heart disease can cause different symptoms—or sometimes none at all.
+          Knowing common warning signs and causes can help you seek care earlier.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-column">
+        <div>
+          <h2>Common Symptoms of Heart Disease</h2>
+          <p>
+            Symptoms vary depending on the type of heart disease and may be mild, severe
+            or even absent. Always treat new or worsening symptoms seriously, especially
+            if they are sudden or intense.
+          </p>
+          <h3>Possible Symptoms</h3>
+          <ul class="list-bullet">
+            <li>Chest pain, pressure, tightness or discomfort (angina)</li>
+            <li>Shortness of breath with activity or at rest</li>
+            <li>Pain, numbness or discomfort in the arms, neck, jaw, back or stomach</li>
+            <li>Rapid, pounding, fluttering or irregular heartbeat (palpitations)</li>
+            <li>Swelling in the legs, ankles, feet or abdomen</li>
+            <li>Unusual tiredness, weakness or fatigue</li>
+            <li>Lightheadedness, dizziness or fainting</li>
+          </ul>
+          <p class="note">
+            <strong>Important:</strong> Chest pain or pressure, especially with shortness
+            of breath, nausea, sweating or pain spreading to the arm or jaw, may be a sign
+            of a heart attack. This is an emergency. Seek immediate medical help.
+          </p>
+        </div>
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='assets/stethoscope.svg') }}" alt="Doctor holding stethoscope" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-dark-alt">
+      <div class="container">
+        <h2>Major Causes and Risk Factors</h2>
+        <p class="section-summary">
+          Heart disease usually develops because of a combination of factors over time.
+          Some can be controlled, while others cannot.
+        </p>
+
+        <div class="two-column stack-on-mobile">
+          <div>
+            <h3>Risk Factors You Can Influence</h3>
+            <ul class="list-check">
+              <li>High blood pressure (hypertension)</li>
+              <li>High cholesterol (especially LDL or “bad” cholesterol)</li>
+              <li>Smoking or tobacco use</li>
+              <li>Diabetes or prediabetes</li>
+              <li>Being overweight or living with obesity</li>
+              <li>Lack of regular physical activity</li>
+              <li>Unhealthy diet (high in salt, sugar and saturated fat)</li>
+              <li>Excessive alcohol use</li>
+              <li>Long-term stress or poor sleep</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Risk Factors You Cannot Change</h3>
+            <ul class="list-bullet">
+              <li>Older age</li>
+              <li>Family history of heart disease or early heart attack</li>
+              <li>Sex assigned at birth and hormonal changes (for example, after menopause)</li>
+              <li>Certain inherited conditions (such as familial high cholesterol)</li>
+              <li>Some congenital (from birth) heart problems</li>
+            </ul>
+            <p>
+              Even if you have risk factors you cannot control, improving the ones you
+              can change still makes a meaningful difference.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>How Lifestyle Affects Your Heart</h2>
+        <p>
+          Everyday choices—such as what you eat, how active you are and whether you smoke—
+          can increase or decrease your risk of heart disease. Heart-healthy habits
+          support normal blood pressure, cholesterol and blood sugar levels.
+        </p>
+        <ul class="list-check">
+          <li>Balanced meals with fruits, vegetables, whole grains and lean proteins</li>
+          <li>Regular physical activity most days of the week</li>
+          <li>Not smoking and avoiding secondhand smoke</li>
+          <li>Managing stress in healthy ways</li>
+          <li>Getting enough quality sleep</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="symptoms-faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question">Do all people with heart disease have chest pain?</button>
+            <div class="faq-answer">
+              <p>
+                No. Some people, especially women and people with diabetes, may have
+                symptoms that are mild, different from “classic” chest pain or not obvious.
+                Others may have no symptoms until a serious event occurs.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can stress alone cause heart disease?</button>
+            <div class="faq-answer">
+              <p>
+                Long-term stress does not usually cause heart disease by itself, but it
+                can raise blood pressure, affect cholesterol and encourage unhealthy habits.
+                Together, these changes can increase your risk.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">If heart disease runs in my family, is it guaranteed I will get it?</button>
+            <div class="faq-answer">
+              <p>
+                No. A family history raises your risk but does not guarantee you will
+                develop heart disease. Healthy lifestyle choices and medical care can still
+                greatly reduce your chances.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

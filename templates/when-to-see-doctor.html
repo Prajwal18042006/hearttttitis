@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}When to See a Doctor | Heart Disease Guide{% endblock %}
+{% block meta_description %}Know the warning signs that require urgent medical care versus those that can wait for a scheduled appointment.{% endblock %}
+{% block canonical %}{{ url_for('when_to_see_doctor', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>When to See a Doctor</h1>
+      <p class="page-summary">
+        Heart symptoms should never be ignored. Use this guide to understand when to call emergency services, contact your provider or schedule a routine visit.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <h2>Call Emergency Services Immediately</h2>
+        <p class="note">
+          Dial your local emergency number (such as 911) if you or someone near you experiences:
+        </p>
+        <ul class="alert-list">
+          <li>Chest pain, pressure or tightness that lasts more than a few minutes</li>
+          <li>Pain that spreads to the arm, back, neck, jaw or stomach</li>
+          <li>Shortness of breath, especially if sudden or severe</li>
+          <li>Sudden weakness, fainting, heavy sweating or nausea</li>
+          <li>Heart palpitations with dizziness or loss of consciousness</li>
+        </ul>
+        <p>
+          Do not drive yourself to the hospital. Emergency responders can begin treatment on the way and are trained to handle sudden complications.
+        </p>
+      </div>
+      <div class="image-card">
+        <img src="{{ url_for('static', filename='assets/hero-illustration.svg') }}" alt="Emergency care illustration" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark-alt">
+    <div class="container">
+      <h2>Contact Your Healthcare Provider Soon</h2>
+      <p class="section-summary">
+        Some symptoms are not emergencies but still require a prompt phone call or visit with your provider.
+      </p>
+      <div class="two-column stack-on-mobile">
+        <div>
+          <h3>Call Within 24 Hours If You Notice</h3>
+          <ul class="list-bullet">
+            <li>New or worsening swelling in the legs, ankles or abdomen</li>
+            <li>Weight gain of more than 2 pounds (1 kg) in a day or 5 pounds (2 kg) in a week</li>
+            <li>Increasing shortness of breath with normal activities</li>
+            <li>Heart palpitations that are frequent or bothersome</li>
+            <li>Medication side effects such as dizziness, coughing or rash</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Schedule a Follow-up When</h3>
+          <ul class="list-check">
+            <li>You finish a course of treatment or start a new medicine</li>
+            <li>It has been more than a year since your last heart checkup</li>
+            <li>You have risk factors such as diabetes, high blood pressure or high cholesterol</li>
+            <li>A close relative was recently diagnosed with early heart disease</li>
+            <li>You want help creating a prevention or lifestyle plan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Prepare for Your Visit</h2>
+      <p>
+        Keep a list of your symptoms, when they began and what makes them better or worse. Bring your medication list, recent test results and questions you want answered. Having this information ready helps your care team respond quickly.
+      </p>
+      <div class="card-grid">
+        <div class="info-card">
+          <h3>Track Measurements</h3>
+          <p>Write down home blood pressure readings, heart rate and weight trends.</p>
+        </div>
+        <div class="info-card">
+          <h3>Bring Support</h3>
+          <p>Ask a trusted friend or family member to join you for note-taking and encouragement.</p>
+        </div>
+        <div class="info-card">
+          <h3>Share Goals</h3>
+          <p>Let your provider know what matters most—work, family, energy or sports—so the plan fits your life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+

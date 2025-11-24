@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Heart Disease Guide{% endblock %}
+{% block meta_description %}Log in to your Heart Disease Guide account to access personalized features.{% endblock %}
+{% block canonical %}{{ url_for('login', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Login</h1>
+      <p class="page-summary">
+        Log in to your account to access personalized features and save your heart health predictions.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="auth-container">
+        <div class="auth-form-wrapper">
+          <h2>Sign In</h2>
+          <form class="auth-form" action="{{ url_for('login') }}" method="post">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input id="username" name="username" type="text" required placeholder="Enter your username" autofocus />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" required placeholder="Enter your password" />
+            </div>
+
+            <button type="submit" class="btn-primary">Login</button>
+            <p class="form-note">
+              Don't have an account? <a href="{{ url_for('register') }}">Register here</a>
+            </p>
+          </form>
+        </div>
+
+        <div class="auth-info">
+          <h2>Why Create an Account?</h2>
+          <ul class="list-check">
+            <li>Save your heart health predictions</li>
+            <li>Track your health metrics over time</li>
+            <li>Access personalized recommendations</li>
+            <li>Get updates on heart health tips</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Outlook &amp; Prognosis for Heart Disease | Heart Disease Guide{% endblock %}
+{% block meta_description %}Understand how treatment, lifestyle and follow-up care influence long-term heart disease outcomes.{% endblock %}
+{% block canonical %}{{ url_for('outlook_prognosis', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Outlook / Prognosis</h1>
+        <p class="page-summary">
+          Many people live long, active lives with heart disease. Your outlook depends on
+          the type of condition, how early it is found and how well it is managed.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>What Affects Prognosis?</h2>
+        <ul class="list-bullet">
+          <li>Type and severity of heart disease</li>
+          <li>Age and other medical conditions such as diabetes or kidney disease</li>
+          <li>How early the condition was diagnosed</li>
+          <li>How well risk factors are controlled</li>
+          <li>Adherence to medicines and follow-up appointments</li>
+          <li>Participation in cardiac rehabilitation or lifestyle programs</li>
+        </ul>
+        <p>
+          Your healthcare provider can explain what your diagnosis means for you personally
+          and how your outlook may change over time.
+        </p>
+      </div>
+    </section>
+
+    <section class="section bg-dark-alt">
+      <div class="container">
+        <h2>Living Well With Heart Disease</h2>
+        <p class="section-summary">
+          Heart disease is often a long-term condition, but many people continue to work,
+          travel and enjoy their usual activities with proper management.
+        </p>
+        <ul class="list-check">
+          <li>Follow treatment plans and attend follow-up visits.</li>
+          <li>Ask questions until you understand your condition and medicines.</li>
+          <li>Recognize symptoms that should be reported promptly.</li>
+          <li>Seek support from family, friends, counselors or support groups.</li>
+          <li>Set realistic goals and celebrate progress toward better health.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="outlook-faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question">Can heart disease be cured?</button>
+            <div class="faq-answer">
+              <p>
+                Some causes of heart problems can be corrected, but many types of heart
+                disease are long-term conditions. Treatment aims to control symptoms,
+                reduce complications and improve quality of life.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Will I always feel limited by heart disease?</button>
+            <div class="faq-answer">
+              <p>
+                Not necessarily. Many people find that with treatment, rehabilitation and
+                lifestyle changes, they can return to many or most of their usual activities.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How can I stay positive after a heart diagnosis?</button>
+            <div class="faq-answer">
+              <p>
+                It is normal to feel worried or sad. Talking with your healthcare team,
+                loved ones, counselors or support groups can help. Focusing on small,
+                achievable steps toward better health can also build confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Treatment &amp; Management of Heart Disease | Heart Disease Guide{% endblock %}
+{% block meta_description %}Overview of lifestyle changes, medicines and procedures used to treat and manage heart disease.{% endblock %}
+{% block canonical %}{{ url_for('treatment_management', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Treatment &amp; Management</h1>
+        <p class="page-summary">
+          Treatment for heart disease is personalized. It usually includes lifestyle changes,
+          medicines and, in some cases, procedures or surgery.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-column">
+        <div>
+          <h2>Lifestyle Changes</h2>
+          <p>
+            Healthy lifestyle habits are the foundation of heart disease treatment. They
+            support your medicines and procedures and can improve your overall wellbeing.
+          </p>
+          <ul class="list-check">
+            <li>Eating a heart-healthy diet</li>
+            <li>Being physically active as advised by your provider</li>
+            <li>Maintaining a healthy weight</li>
+            <li>Not smoking or using tobacco products</li>
+            <li>Limiting alcohol and managing stress</li>
+          </ul>
+        </div>
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='assets/doctor-consult.svg') }}" alt="Person discussing treatment with a doctor" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-dark-alt">
+      <div class="container">
+        <h2>Medications</h2>
+        <p class="section-summary">
+          Medicines can help control symptoms, prevent complications and improve survival.
+          Always take them exactly as prescribed.
+        </p>
+        <div class="two-column stack-on-mobile">
+          <div>
+            <h3>Common Medication Types</h3>
+            <ul class="list-bullet">
+              <li>Blood pressure medicines (such as ACE inhibitors or beta-blockers)</li>
+              <li>Cholesterol-lowering medicines (such as statins)</li>
+              <li>Blood thinners to reduce clot risk</li>
+              <li>Medicines to control heart rhythm</li>
+              <li>Medicines to reduce fluid buildup in heart failure</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tips for Safe Use</h3>
+            <ul class="list-check">
+              <li>Keep an updated list of all medicines and doses.</li>
+              <li>Take medicines at the same time each day.</li>
+              <li>Never stop or change a dose without talking to your provider.</li>
+              <li>Report side effects promptly.</li>
+              <li>Ask if there are interactions with other medicines or supplements.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Procedures and Surgeries</h2>
+        <p>
+          Some people with heart disease need procedures or surgery if medicines and
+          lifestyle changes are not enough. Your care team will explain the benefits
+          and risks of each option.
+        </p>
+        <ul class="list-bullet">
+          <li><strong>Angioplasty and stent placement:</strong> Opens narrowed or blocked arteries.</li>
+          <li><strong>Coronary artery bypass graft (CABG) surgery:</strong> Reroutes blood around blocked arteries.</li>
+          <li><strong>Valve repair or replacement:</strong> Fixes or replaces damaged heart valves.</li>
+          <li><strong>Implantable devices:</strong> Pacemakers or defibrillators help control rhythm or prevent sudden death.</li>
+        </ul>
+        <p>
+          After a procedure, cardiac rehabilitation programs can support recovery with
+          supervised exercise, education and counseling.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="treatment-faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question">Will I need to take heart medicines for life?</button>
+            <div class="faq-answer">
+              <p>
+                Many people with heart disease take long-term medicines. The exact plan
+                depends on your condition and how your heart responds. Never stop a
+                medication without talking to your provider.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can lifestyle changes alone treat heart disease?</button>
+            <div class="faq-answer">
+              <p>
+                Lifestyle changes are very important and sometimes enough for mild disease
+                or risk factors. However, many people also need medicines or procedures.
+                Your provider will recommend a plan for you.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What is cardiac rehabilitation?</button>
+            <div class="faq-answer">
+              <p>
+                Cardiac rehab is a structured program that includes monitored exercise,
+                education and support. It is designed to help you recover and live
+                healthier after a heart attack, surgery or diagnosis of heart disease.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

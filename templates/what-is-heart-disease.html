@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}What Is Heart Disease? | Heart Disease Guide{% endblock %}
+{% block meta_description %}Plain-language overview of what heart disease is, the most common types and how it develops over time.{% endblock %}
+{% block canonical %}{{ url_for('what_is_heart_disease', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>What Is Heart Disease?</h1>
+        <p class="page-summary">
+          Heart disease is a broad term for conditions that affect the heart and blood vessels.
+          Understanding the basics can help you protect your heart and work with your healthcare team.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-column">
+        <div>
+          <h2>Overview</h2>
+          <p>
+            “Heart disease” is commonly used to describe several different problems with
+            the heart and blood vessels. Many of these conditions are related to a process
+            called atherosclerosis, where fatty deposits (plaque) build up inside the arteries.
+          </p>
+          <p>
+            Over time, this buildup can narrow or block blood flow to the heart muscle and
+            other organs. When the heart does not get enough oxygen-rich blood, it can lead
+            to chest pain, heart attack, heart failure or other serious complications.
+          </p>
+          <ul class="list-check">
+            <li>Heart disease is common but often preventable.</li>
+            <li>It can affect people of all genders and ages.</li>
+            <li>Healthy habits and medical care can lower your risk.</li>
+          </ul>
+        </div>
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='assets/heart-ecg.svg') }}" alt="Heart and ECG line illustration" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-dark-alt">
+      <div class="container">
+        <h2>Common Types of Heart Disease</h2>
+        <p class="section-summary">
+          Different types of heart disease affect the heart in different ways. Many people may
+          have more than one type at the same time.
+        </p>
+        <div class="card-grid">
+          <div class="info-card">
+            <div class="card-icon">🫀</div>
+            <h3>Coronary Artery Disease (CAD)</h3>
+            <p>
+              CAD happens when the arteries that supply blood to the heart muscle become
+              narrowed or blocked. It is a leading cause of chest pain (angina) and heart attacks.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">💓</div>
+            <h3>Heart Rhythm Problems (Arrhythmias)</h3>
+            <p>
+              Arrhythmias are abnormal heartbeats. The heart may beat too fast, too slow or
+              in an irregular pattern. Some arrhythmias are harmless; others can be serious.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🧩</div>
+            <h3>Heart Failure</h3>
+            <p>
+              Heart failure means the heart is not pumping blood as well as it should. It does
+              not mean the heart has stopped, but it may struggle to meet the body’s needs.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🍼</div>
+            <h3>Congenital Heart Disease</h3>
+            <p>
+              Congenital heart disease refers to heart problems present at birth. These may
+              involve the heart’s walls, valves or blood vessels.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🚪</div>
+            <h3>Heart Valve Disease</h3>
+            <p>
+              Valve disease occurs when one or more of the heart’s valves do not open or
+              close properly, affecting blood flow through the heart.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🔥</div>
+            <h3>Inflammatory Heart Conditions</h3>
+            <p>
+              Conditions like myocarditis (heart muscle inflammation) or pericarditis (lining
+              of the heart) are often caused by infections or immune system problems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>How Heart Disease Develops</h2>
+        <p>
+          Many forms of heart disease are long-term (chronic) conditions that develop slowly.
+          High blood pressure, high cholesterol, smoking, diabetes, obesity and lack of exercise
+          can damage blood vessels and the heart over time.
+        </p>
+        <p>
+          This damage can lead to plaque buildup, stiffening of the arteries and changes in
+          how the heart muscle works. Because this process is gradual, you may not notice
+          symptoms at first. Regular checkups are important, especially if you have risk factors.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="what-faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question">Is heart disease the same as a heart attack?</button>
+            <div class="faq-answer">
+              <p>
+                No. Heart disease refers to a group of conditions that affect the heart and
+                blood vessels. A heart attack is one possible emergency event that can occur
+                when blood flow to part of the heart is blocked.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can someone have heart disease without symptoms?</button>
+            <div class="faq-answer">
+              <p>
+                Yes. Many people have heart disease without obvious symptoms, especially
+                early on. That is why routine checkups and risk factor screening are important.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Is heart disease always serious?</button>
+            <div class="faq-answer">
+              <p>
+                Any heart condition should be taken seriously. However, the severity can
+                vary widely. Some forms are mild and manageable, while others can be life-threatening
+                if not treated. Your healthcare provider can explain your specific situation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

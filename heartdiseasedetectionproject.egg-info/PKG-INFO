@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: heartdiseasedetectionproject
+Version: 0.0.1
+Summary: Heart disease detection project using ML
+Author: prajwal
+Author-email: prajwaljagtap977@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: xgboost
+Requires-Dist: catboost
+Requires-Dist: lightgbm
+Requires-Dist: flask
+Requires-Dist: gunicorn
+Requires-Dist: joblib
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Prevention of Heart Disease | Heart Disease Guide{% endblock %}
+{% block meta_description %}Practical lifestyle tips to lower blood pressure, manage cholesterol and prevent heart disease complications.{% endblock %}
+{% block canonical %}{{ url_for('prevention', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Prevention</h1>
+        <p class="page-summary">
+          You cannot control every risk factor, but many everyday choices can reduce
+          your chances of developing heart disease or having complications.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Heart-Healthy Lifestyle</h2>
+        <p>
+          Small, consistent changes add up over time. You do not need to be perfect.
+          Focus on building habits you can maintain for the long term.
+        </p>
+        <div class="card-grid">
+          <div class="info-card">
+            <div class="card-icon">🥗</div>
+            <h3>Eat Well</h3>
+            <p>
+              Choose more fruits, vegetables, whole grains, beans, nuts and lean proteins.
+              Limit processed foods, added sugars, salt and unhealthy fats.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🚶</div>
+            <h3>Move More</h3>
+            <p>
+              Aim for regular physical activity most days of the week. Even short walks
+              or gentle exercise count. Ask your provider what is safe for you.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🚭</div>
+            <h3>Don’t Smoke</h3>
+            <p>
+              Quitting smoking is one of the most powerful steps you can take to protect
+              your heart. Ask about programs, medicines or counseling to help you quit.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🧘</div>
+            <h3>Manage Stress</h3>
+            <p>
+              Practice relaxation techniques, connect with others and seek support if you
+              feel overwhelmed or anxious.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-dark-alt">
+      <div class="container">
+        <h2>Check and Control Risk Factors</h2>
+        <p class="section-summary">
+          Regular health screenings help detect problems early, when they may be easier to treat.
+        </p>
+        <ul class="list-check">
+          <li>Monitor blood pressure and follow treatment if it is high.</li>
+          <li>Check cholesterol and manage it with diet, exercise and medicines if needed.</li>
+          <li>Screen for diabetes and keep blood sugar in target ranges.</li>
+          <li>Maintain a healthy weight through balanced habits.</li>
+          <li>Discuss your family history and personal risk with your provider.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="prevention-faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question">Is it ever too late to start preventing heart disease?</button>
+            <div class="faq-answer">
+              <p>
+                It is never too late to make heart-healthy changes. Even if you already
+                have heart disease, healthy habits can slow progression and improve quality of life.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How much exercise is enough?</button>
+            <div class="faq-answer">
+              <p>
+                Many guidelines suggest at least 150 minutes of moderate-intensity activity
+                each week, but your provider may recommend a plan tailored to your health
+                and abilities.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can diet supplements replace heart medicines?</button>
+            <div class="faq-answer">
+              <p>
+                No. Supplements should not replace prescribed medicines. Always talk to your
+                provider before starting any supplement, as some may interact with medicines
+                or not be appropriate for you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

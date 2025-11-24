@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}Diagnosis &amp; Tests for Heart Disease | Heart Disease Guide{% endblock %}
+{% block meta_description %}Learn how heart disease is diagnosed, including ECG, echocardiogram, stress tests and blood work.{% endblock %}
+{% block canonical %}{{ url_for('diagnosis_tests', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Diagnosis &amp; Tests</h1>
+        <p class="page-summary">
+          Healthcare providers use a combination of questions, exams and tests to
+          understand how your heart is working and to diagnose heart disease.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Medical History and Physical Examination</h2>
+        <p>
+          The diagnostic process usually starts with a detailed conversation about your
+          symptoms, health history, medications and family history of heart disease. Your
+          provider will also perform a physical exam.
+        </p>
+        <ul class="list-bullet">
+          <li>Listening to your heart and lungs with a stethoscope</li>
+          <li>Checking blood pressure and heart rate</li>
+          <li>Looking for swelling in your legs, ankles or abdomen</li>
+          <li>Reviewing other health conditions such as diabetes or kidney disease</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section bg-dark-alt">
+      <div class="container">
+        <h2>Common Heart Tests</h2>
+        <p class="section-summary">
+          Different tests provide different information. Your provider will choose the
+          tests that best match your symptoms and medical history.
+        </p>
+        <div class="card-grid">
+          <div class="info-card">
+            <div class="card-icon">📊</div>
+            <h3>Blood Tests</h3>
+            <p>
+              Blood tests can check cholesterol, blood sugar, kidney function and markers
+              of heart damage. They help identify risk factors and complications.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">📈</div>
+            <h3>Electrocardiogram (ECG or EKG)</h3>
+            <p>
+              An ECG records the electrical activity of your heart. It can show heart
+              rhythm problems, signs of a previous heart attack or other abnormalities.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🪧</div>
+            <h3>Echocardiogram</h3>
+            <p>
+              An echocardiogram is an ultrasound of the heart. It shows how the heart
+              chambers and valves move and how well the heart pumps blood.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🏃</div>
+            <h3>Stress Test</h3>
+            <p>
+              A stress test looks at how your heart works during physical activity or
+              medicine that makes the heart beat faster. It can help detect reduced blood flow.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🧲</div>
+            <h3>Cardiac Imaging</h3>
+            <p>
+              Imaging tests such as CT scans, MRI or nuclear scans show detailed pictures of
+              the heart and blood vessels to detect blockages or damage.
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="card-icon">🩻</div>
+            <h3>Cardiac Catheterization</h3>
+            <p>
+              In this procedure, a thin tube is guided through a blood vessel to the heart.
+              Dye and X-rays help visualize blockages in the coronary arteries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Preparing for Heart Tests</h2>
+        <p>
+          Your provider will tell you how to prepare for each test. This may include
+          fasting before blood tests, wearing comfortable clothes for exercise tests or
+          temporarily changing some medications. Always follow instructions carefully
+          and ask questions if anything is unclear.
+        </p>
+        <p>
+          After testing, your provider will discuss the results with you and explain
+          what they mean for your care plan.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="diagnosis-faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question">Are heart tests painful?</button>
+            <div class="faq-answer">
+              <p>
+                Most tests, such as ECGs, echocardiograms and blood tests, cause little or
+                no discomfort. Some procedures, like cardiac catheterization, are more
+                invasive but are done with medicine to keep you comfortable.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Will one test show everything about my heart?</button>
+            <div class="faq-answer">
+              <p>
+                No single test provides all the information about your heart. Providers
+                often combine results from several tests, your symptoms and exam findings
+                to make an accurate diagnosis.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How often should I get my heart checked?</button>
+            <div class="faq-answer">
+              <p>
+                It depends on your age, medical conditions and risk factors. Many adults
+                benefit from routine checkups every year or as advised by their provider.
+                People with known heart disease may need more frequent monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

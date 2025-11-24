@@ -1,0 +1,8 @@
+README.md
+setup.py
+heartdiseasedetectionproject.egg-info/PKG-INFO
+heartdiseasedetectionproject.egg-info/SOURCES.txt
+heartdiseasedetectionproject.egg-info/dependency_links.txt
+heartdiseasedetectionproject.egg-info/requires.txt
+heartdiseasedetectionproject.egg-info/top_level.txt
+src/__init__.py

@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block title %}Heart Disease Guide | Home{% endblock %}
+{% block meta_description %}
+Heart Disease Guide centralizes trusted information about symptoms, causes, diagnosis, treatment options, prevention tips and when to call a doctor.
+{% endblock %}
+{% block canonical %}{{ url_for('home', _external=True) }}{% endblock %}
+
+{% block content %}
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Your Complete <span class="accent">Heart Disease Guide</span></h1>
+        <p>
+          Learn about heart disease in simple language: what it is, why it
+          happens, how to spot symptoms early and how you can protect your heart.
+        </p>
+        <div class="hero-actions">
+          <a href="{{ url_for('what_is_heart_disease') }}" class="btn-primary">Start Learning</a>
+          <a href="{{ url_for('when_to_see_doctor') }}" class="btn-outline">When to Seek Help</a>
+        </div>
+        <ul class="hero-key-points">
+          <li>✔ Easy-to-understand medical information</li>
+          <li>✔ Evidence-based and regularly reviewable</li>
+          <li>✔ Tips to prevent and manage heart disease</li>
+        </ul>
+        {% if prediction_text %}
+        <div class="prediction-result">
+          <strong>Latest result:</strong> {{ prediction_text }}
+        </div>
+        {% endif %}
+      </div>
+      <div class="hero-visual">
+        <canvas id="heartCanvas" aria-label="Animated 3D Heart"></canvas>
+        <p class="hero-canvas-caption">Animated heart icon (3D) for visual learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark-alt">
+    <div class="container">
+      <h2 class="section-title">Explore Key Topics</h2>
+      <p class="section-summary">
+        Browse through focused sections to understand every step of your heart health journey.
+      </p>
+      <div class="card-grid">
+        <a href="{{ url_for('what_is_heart_disease') }}" class="info-card">
+          <div class="card-icon">❤️</div>
+          <h3>What Is Heart Disease?</h3>
+          <p>Understand the basics of heart disease, including common types and how they affect your body.</p>
+        </a>
+        <a href="{{ url_for('symptoms_causes') }}" class="info-card">
+          <div class="card-icon">⚠️</div>
+          <h3>Symptoms &amp; Causes</h3>
+          <p>Recognize warning signs and learn about risk factors you can and cannot change.</p>
+        </a>
+        <a href="{{ url_for('diagnosis_tests') }}" class="info-card">
+          <div class="card-icon">🩺</div>
+          <h3>Diagnosis &amp; Tests</h3>
+          <p>See how healthcare providers check your heart and what common tests mean.</p>
+        </a>
+        <a href="{{ url_for('treatment_management') }}" class="info-card">
+          <div class="card-icon">💊</div>
+          <h3>Treatment &amp; Management</h3>
+          <p>Discover medicines, procedures and lifestyle changes used to manage heart disease.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Highlights -->
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <h2 class="section-title">Why Understanding Heart Disease Matters</h2>
+        <p>
+          Heart disease is one of the most common health problems worldwide.
+          It often develops slowly over time and may not cause symptoms early on.
+          Learning about heart disease helps you recognize risks, make healthier
+          choices and seek medical care before complications develop.
+        </p>
+        <ul class="list-check">
+          <li>Heart disease can often be prevented or delayed.</li>
+          <li>Simple lifestyle changes can reduce your risk.</li>
+          <li>Early diagnosis and treatment improve long-term outcomes.</li>
+          <li>Partnering with your healthcare provider is essential.</li>
+        </ul>
+      </div>
+      <div class="image-card">
+        <img src="{{ url_for('static', filename='assets/hero-illustration.svg') }}" alt="Illustration of heart and ECG line" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark-alt">
+    <div class="container cta">
+      <div>
+        <h2 class="section-title">This Website Is for Education, Not Emergency Care</h2>
+        <p>
+          The information on Heart Disease Guide is for general education only.
+          It does not replace medical advice, diagnosis or treatment from a
+          qualified healthcare professional.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a href="{{ url_for('when_to_see_doctor') }}" class="btn-primary">Learn When to Call a Doctor</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prediction-card">
+      <div>
+        <h2 class="section-title">Check Your Heart Health Indicators</h2>
+        <p class="section-summary">
+          Enter the same clinical values used to train the machine learning model and get an instant prediction.
+        </p>
+      </div>
+      {% if prediction_text %}
+      <div class="prediction-result">
+        <strong>Model output:</strong> {{ prediction_text }}
+      </div>
+      {% endif %}
+      <form class="predict-form" action="{{ url_for('predict') }}" method="post">
+        <div class="form-grid">
+          <label>
+            <span>Age (years)</span>
+            <input type="number" name="age" min="1" step="1" required />
+          </label>
+          <label>
+            <span>Sex</span>
+            <select name="sex" required>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select>
+          </label>
+          <label>
+            <span>Chest Pain Type (cp)</span>
+            <select name="cp" required>
+              <option value="0">Typical angina</option>
+              <option value="1">Atypical angina</option>
+              <option value="2">Non-anginal pain</option>
+              <option value="3">Asymptomatic</option>
+            </select>
+          </label>
+          <label>
+            <span>Resting BP (trestbps)</span>
+            <input type="number" name="trestbps" min="60" max="260" step="1" required />
+          </label>
+          <label>
+            <span>Cholesterol (chol)</span>
+            <input type="number" name="chol" min="80" max="700" step="1" required />
+          </label>
+          <label>
+            <span>Fasting Sugar &gt; 120 mg/dL</span>
+            <select name="fbs" required>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </label>
+          <label>
+            <span>Resting ECG (restecg)</span>
+            <select name="restecg" required>
+              <option value="0">Normal</option>
+              <option value="1">ST-T abnormality</option>
+              <option value="2">Left ventricular hypertrophy</option>
+            </select>
+          </label>
+          <label>
+            <span>Max Heart Rate (thalach)</span>
+            <input type="number" name="thalach" min="60" max="220" step="1" required />
+          </label>
+          <label>
+            <span>Exercise-induced Angina</span>
+            <select name="exang" required>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </label>
+          <label>
+            <span>ST Depression (oldpeak)</span>
+            <input type="number" name="oldpeak" min="0" max="10" step="0.1" required />
+          </label>
+          <label>
+            <span>Slope of ST Segment</span>
+            <select name="slope" required>
+              <option value="0">Upsloping</option>
+              <option value="1">Flat</option>
+              <option value="2">Downsloping</option>
+            </select>
+          </label>
+          <label>
+            <span>Major Vessels Colored (ca)</span>
+            <select name="ca" required>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+          <label>
+            <span>Thalassemia (thal)</span>
+            <select name="thal" required>
+              <option value="1">Normal</option>
+              <option value="2">Fixed defect</option>
+              <option value="3">Reversible defect</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit" class="btn-primary">Predict Now</button>
+        <p class="form-note">
+          Predictions are illustrative and should never replace evaluation by a licensed clinician.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="home-faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-question">Is this website a substitute for my doctor?</button>
+          <div class="faq-answer">
+            <p>
+              No. This website provides educational information only. It should
+              not be used to diagnose, treat or manage any medical condition.
+              Always speak with your healthcare provider about your own health.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What should I do in an emergency?</button>
+          <div class="faq-answer">
+            <p>
+              If you have chest pain, trouble breathing, sudden weakness, fainting
+              or think you might be having a heart attack, seek emergency medical
+              care immediately. Do not rely on online information.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Where does the information come from?</button>
+          <div class="faq-answer">
+            <p>
+              The content is based on widely accepted medical knowledge, guidelines
+              and educational resources. It is written in simple language to help
+              you understand complex topics but should always be confirmed with your doctor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
