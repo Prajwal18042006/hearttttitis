@@ -9,4 +9,3 @@ lightgbm
 flask
 gunicorn
 joblib
--e .
